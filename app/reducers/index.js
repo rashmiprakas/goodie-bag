@@ -1,3 +1,4 @@
+import Axios from "axios";
 
 const initialState = {
   candies: []
@@ -8,6 +9,12 @@ export const getAllCandies = (candies) => ({
   candies
 })
 
+export const getCandies = () => {
+  return async (dispatch) => {
+    const { data } = await Axios.get('/candies')
+    dispatch(getAllCandies(data))
+  }
+}
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_ALL_CANDIES':
@@ -16,5 +23,6 @@ const rootReducer = (state = initialState, action) => {
       return state
   }
 }
+
 
 export default rootReducer

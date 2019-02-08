@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 //import ReactDOM from 'react-dom'
-import store from './store'
+import store from '../store'
 import Candy from './Candy'
 
 class CandyList extends Component {
@@ -16,10 +16,10 @@ class CandyList extends Component {
     }
 
     render() {
-        console.log(this.props)
+        console.log('HELLOOOO', this.props)
         return (
             <div >
-                <h1>These are the candies in the bag</h1>
+                <h2>These are the candies in the bag</h2>
                 <table>
                     <tbody>
                         <tr>
